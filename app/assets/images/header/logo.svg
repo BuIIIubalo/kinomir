@@ -1,0 +1,15 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 21" width="100" height="21">
+	<title>Новый проект</title>
+	<defs>
+		<image  width="100" height="22" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAWCAMAAAAB1smsAAAAAXNSR0IB2cksfwAAAEJQTFRFAAAA////////////////////AHv/////////////////////////////////AHv/////////////AHv/AHv/AHv/jWKHeAAAABZ0Uk5TAEDg/7AQANBwIJCggGDwAlAwwAwJGDwqWM0AAAGeSURBVHicrZXZdoQgDEAJiyMKjND2/3+1JiBDVNTT07wgIeSSBRTiREAqbc4WnsiwSm8N4PP9UkqNf3E+1OEodpKrWyVnm+c4m576LcIgJxSnqmTXXqlgH0DeJ5BOumbViCaVgaPZw0hQe7Qc0XeYllGHLRYLAKYO4Hz8mMfRucVcQDgxTy26ftEu+lQ25w/KkONMJXuLLGk11QELi0GGqkVPoZw0IsUxSChpDOT1Uz06Vh+yUcqA7brsMthAqswYR/afY3sOEQI37MvUQmYQPhUjzJWOwniVDZqK7CF8DY92AUmkkKSINW1zDu0KInaQdAHJF38mBfbhy6HovOsRRIjbdEGjYDW6hbR3X1ZPf4N0Cs8hc70m60XXKSXfhXjqg03iDaRNl1W19IaaM3YhWHhJc7/WBR5CaDJR7D6Ck9vj1YEIbGW9lJfoJhJWr/z34De5BwEykWE7zAVkGDjFNM9wMuICQlVpDnMHYcUHXXb6y+5CS7r8Krjq9xxyaGyKBvKznoU/9aL9EnZxIzR+GeSLQTbtW/yrfJ8p3z+/lLEYjWTxIFIAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 23px;fill: #156ded;font-weight: 700;font-family: "DejaVuSans-Bold", "DejaVu Sans" } 
+	</style>
+	<use id="download" href="#img1" x="0" y="0" />
+	<text id="W" style="transform: matrix(1,0,0,1,60,20.2)" >
+		<tspan x="0" y="0" class="t0">W</tspan><tspan  y="0" class="t0">
+</tspan>
+	</text>
+</svg>
