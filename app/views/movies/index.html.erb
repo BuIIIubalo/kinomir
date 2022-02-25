@@ -1,0 +1,17 @@
+<!-- Banner -->
+<%= render partial: 'shared/banner-section' %>
+
+<section class="movies">
+  <!-- Filter -->
+  <%= render partial: 'shared/filter-section' %>
+
+  <!-- Movies -->
+  <div class="movies-grid">
+    <% 20.times do %>
+      <%= render partial: 'shared/movie-card'%>
+    <% end %>
+  </div>
+</section>
+
+<!-- Banner Section -->
+<%= render partial: 'shared/category-section' %>
