@@ -21,7 +21,9 @@ navbarMenuBtn.addEventListener('click', navIsActive);
 
 
 // navbar search toggle function
-const searchBarIsActive = () => navbarForm.classList.toggle('active');
+function searchBarIsActive(){
+    navbarForm.classList.toggle('active');
+}
 
 navbarSearchBtn.addEventListener('click', searchBarIsActive);
 navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
