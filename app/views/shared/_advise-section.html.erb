@@ -1,0 +1,10 @@
+<div class="advise">
+
+  <h2 class="section-heading">Recommendations</h2>
+
+  <div class="advise-grid">
+    <% @advise.each do |advise| %>
+      <%= render partial: 'shared/movie-card', locals: { object: advise } %>
+    <% end %>
+  </div>
+</div>

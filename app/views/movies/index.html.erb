@@ -1,4 +1,4 @@
-<!-- Banner -->
+<!-- Banner Section -->
 <%= render partial: 'shared/banner-section' %>
 
 <section class="movies">
@@ -8,10 +8,13 @@
   <!-- Movies -->
   <div class="movies-grid">
     <% @movies.each do |movie| %>
-      <%= render partial: 'shared/movie-card', locals: { movie: movie }%>
+      <%= render partial: 'shared/movie-card', locals: { object: movie } %>
     <% end %>
   </div>
 </section>
 
-<!-- Banner Section -->
+<!-- Recommendations Section -->
+<%= render partial: 'shared/advise-section' %>
+
+<!-- Category Section -->
 <%= render partial: 'shared/category-section' %>
