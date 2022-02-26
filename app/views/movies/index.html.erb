@@ -3,11 +3,19 @@
 
 <!-- Movies section -->
 <%= render partial: 'shared/movies-section', locals: { :object       => @movies,
-                                                       :section_name => "Movies" } %>
+                                                       :section_name => "Фильмы" } %>
+
+<!-- Series Section -->
+<%= render partial: 'shared/movies-section', locals: { :object       => @movies,
+                                                       :section_name => "Сериалы" } %>
+
+<!-- Cartoon Section -->
+<%= render partial: 'shared/movies-section', locals: { :object       => @movies,
+                                                       :section_name => "Мультфильмы" } %>
 
 <!-- Recommendations Section -->
 <%= render partial: 'shared/movies-section', locals: { :object       => @advise,
-                                                       :section_name => "Recommendations" } %>
+                                                       :section_name => "Рекомендации" } %>
 
 <!-- Category Section -->
 <%= render partial: 'shared/category-section' %>

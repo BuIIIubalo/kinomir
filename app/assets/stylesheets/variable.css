@@ -7,8 +7,8 @@
     * Colors
     */
 
-    --rich-black-fogra-30:   hsl(219, 32%, 10%);
-    --rich-black-fogra-29:   hsl(222, 25%, 10%);
+    --rich-black-fogra-30:   hsl(250,28.57%,8.24%);
+    --rich-black-fogra-29:   hsl(250.91,28.21%,7.65%);
     --oxford-blue-50:        hsla(218, 39%, 14%, 0.8);
     --oxford-blue:           hsl(218, 39%, 14%);
     --light-azure:           hsl(214, 84%, 56%);
