@@ -7,8 +7,8 @@
 
   <!-- Movies -->
   <div class="movies-grid">
-    <% 20.times do %>
-      <%= render partial: 'shared/movie-card'%>
+    <% @movies.each do |movie| %>
+      <%= render partial: 'shared/movie-card', locals: { movie: movie }%>
     <% end %>
   </div>
 </section>

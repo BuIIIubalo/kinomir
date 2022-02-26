@@ -1,7 +1,7 @@
 <div class="movie-card">
 
   <div class="card-head">
-    <img src="https://cdn.shopify.com/s/files/1/1416/8662/products/interstellar_2014_french_advance_original_film_art_1200x.jpg?v=1611897304" alt="" class="card-img">
+    <img src=<%= movie.poster_url %> alt="" class="card-img">
 
     <div class="card-overlay">
 
@@ -22,11 +22,15 @@
   </div>
 
   <div class="card-body">
-    <h3 class="card-title">Интерстеллар</h3>
+    <h3 class="card-title">
+      <%= movie.name_ru %>
+    </h3>
 
     <div class="card-info">
       <span class="genre">Приключение/Фантастика</span>
-      <span class="year">2014</span>
+      <span class="year">
+        <%= movie.year %>
+      </span>
     </div>
   </div>
 

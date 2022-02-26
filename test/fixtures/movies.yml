@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kp_id: MyString
+  imdb_id: MyString
+  poster_url: MyString
+  trailer_url: MyString
+  iframe_url: MyString
+  name_ru: MyString
+  name_en: MyString
+  description: MyText
+  year: 1
+  film_length: 1
+  box_office_world: 1
+  rating_kp: 1.5
+  rating_imdb: 1.5
+  recomended: false
+
+two:
+  kp_id: MyString
+  imdb_id: MyString
+  poster_url: MyString
+  trailer_url: MyString
+  iframe_url: MyString
+  name_ru: MyString
+  name_en: MyString
+  description: MyText
+  year: 1
+  film_length: 1
+  box_office_world: 1
+  rating_kp: 1.5
+  rating_imdb: 1.5
+  recomended: false
