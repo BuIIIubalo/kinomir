@@ -133,11 +133,14 @@
      * BANNER SECTION RESPONSIVE
      */
 
+    .card-title{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .banner { margin-top: 100px; }
-
     .banner-card .card-title { font-size: 2.5em; }
-
-
 
     /**
      * CATEGORY SECTION RESPONSIVE
@@ -159,6 +162,14 @@
     }
 
     .footer-links { grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); }
+
+    /**
+     * MOVIE#SHOW
+     */
+
+    .movie{
+        padding-top: 120px;
+    }
 
 }
 
@@ -189,6 +200,14 @@
         bottom: 40px;
         left: 60px;
         right: 60px;
+    }
+
+    /**
+     * MOVIE#SHOW
+     */
+
+    .iframe-container{
+        height: 450px;
     }
 
 }
@@ -239,6 +258,14 @@
 
     .filter-radios { width: 100%; }
 
+    /**
+     * MOVIE#SHOW
+     */
+
+    .iframe-container{
+        height: 350px;
+    }
+
 }
 
 
@@ -280,4 +307,12 @@
     .footer-copyright { flex-direction: column-reverse; }
 
     .wrapper { margin-bottom: 20px; }
+
+    /**
+     * MOVIE#SHOW IFRAME
+     */
+
+    .iframe-container{
+        height: 250px;
+    }
 }

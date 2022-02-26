@@ -1,0 +1,29 @@
+
+/*-------------------------------------*\
+  # MOVIE METADATA
+\*-------------------------------------*/
+
+.part-metadata{
+    padding-bottom: 5px;
+    display: flex;
+    gap:10px;
+}
+.time{
+    display: flex;
+    gap: 5px;
+}
+
+.time i{
+    color: var(--azure);
+}
+
+/*-------------------------------------*\
+  # MOVIE IFRAME
+\*-------------------------------------*/
+
+.iframe-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    height: 550px;
+}

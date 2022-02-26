@@ -1,0 +1,46 @@
+<section class="movie">
+
+  <!--
+    - Movie Title
+  -->
+  <h2 class="section-heading">
+    <%= @movie.name_ru %>
+  </h2>
+
+  <!--
+    - Movie Metadata
+  -->
+  <div class="metadata" style="margin-bottom: 20px">
+    <div class="part-metadata">
+
+      <!-- YEAR -->
+      <p>2014</p>
+
+      <!-- MOVIE LENGTH -->
+      <div class="time">
+        <i class="fa-solid fa-clock"></i>
+        <p>169</p>
+        <p>минут</p>
+      </div>
+
+    </div>
+    <div class="part-metadata">
+      <bold>Актеры:</bold>
+
+      <!-- ACTORS -->
+      <p>
+        Юрий Борисов, Стася Милославская, Афина Кондрашова
+      </p>
+
+    </div>
+  </div>
+
+  <!--
+    - Movie Iframe
+  -->
+
+  <div class="iframe-container">
+    <iframe src=<%= @movie.iframe_url %> frameborder="0" style="width: 100%; height: 100%"></iframe>
+  </div>
+
+</section>
