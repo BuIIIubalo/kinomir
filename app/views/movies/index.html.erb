@@ -1,20 +1,13 @@
 <!-- Banner Section -->
 <%= render partial: 'shared/banner-section' %>
 
-<section class="movies">
-  <!-- Filter -->
-  <%= render partial: 'shared/filter-section' %>
-
-  <!-- Movies -->
-  <div class="movies-grid">
-    <% @movies.each do |movie| %>
-      <%= render partial: 'shared/movie-card', locals: { object: movie } %>
-    <% end %>
-  </div>
-</section>
+<!-- Movies section -->
+<%= render partial: 'shared/movies-section', locals: { :object       => @movies,
+                                                       :section_name => "Movies" } %>
 
 <!-- Recommendations Section -->
-<%= render partial: 'shared/advise-section' %>
+<%= render partial: 'shared/movies-section', locals: { :object       => @advise,
+                                                       :section_name => "Recommendations" } %>
 
 <!-- Category Section -->
 <%= render partial: 'shared/category-section' %>

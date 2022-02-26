@@ -60,7 +60,7 @@ header, nav { background: var(--rich-black-fogra-29); }
 .section-heading {
     font-size: var(--section-heading);
     font-weight: var(--fw-5);
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 
@@ -513,23 +513,6 @@ input ~ .checked-radio-bg {
 }
 
 .category-card:hover .name { color: var(--light-azure); }
-
-
-
-
-
-/*-------------------------------------*\
-  #RECOMMENDATIONS SECTION
-\*-------------------------------------*/
-
-.advise { margin-bottom: 60px; }
-
-.advise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
 
 /*-------------------------------------*\
   #FOOTER SECTION

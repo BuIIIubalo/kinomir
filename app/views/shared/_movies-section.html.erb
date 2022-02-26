@@ -1,0 +1,17 @@
+<section class="movies">
+  <!-- Filter -->
+  <%#= render partial: 'shared/filter-section' %>
+
+  <!-- Section name -->
+  <h2 class="section-heading">
+    <%= section_name %>
+  </h2>
+
+  <!-- Movies -->
+  <div class="movies-grid">
+    <% object.each do |movie| %>
+      <%= render partial: 'shared/movie-card', locals: { object: movie } %>
+    <% end %>
+  </div>
+
+</section>
