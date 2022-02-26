@@ -14,6 +14,7 @@ gem "jbuilder"
 gem "bootsnap", require: false
 
 gem 'jquery-rails'
+gem 'pagy', '~> 5.10', '>= 5.10.1'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
