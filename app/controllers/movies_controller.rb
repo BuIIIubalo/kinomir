@@ -3,10 +3,14 @@ class MoviesController < ApplicationController
 
     @advise = Movie.where(recomended: true)
 
-    #Categories
+    # Movie Categories
     @pagy, @movies = pagy(Category.find_by_name('movie').movies, items: 7)
     @pagy, @series = pagy(Category.find_by_name('series').movies, items: 7)
     @pagy, @cartoons = pagy(Category.find_by_name('cartoon').movies, items: 7)
+
+    # Movie Genres
+    @genres = Genre.all
+
   end
 
   def show

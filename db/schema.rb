@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_26_135812) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_27_104024) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -24,6 +24,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_26_135812) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categoryships_on_category_id"
     t.index ["movie_id"], name: "index_categoryships_on_movie_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genreships", force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "movie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_genreships_on_genre_id"
+    t.index ["movie_id"], name: "index_genreships_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -47,4 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_26_135812) do
 
   add_foreign_key "categoryships", "categories"
   add_foreign_key "categoryships", "movies"
+  add_foreign_key "genreships", "genres"
+  add_foreign_key "genreships", "movies"
 end

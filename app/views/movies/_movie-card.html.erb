@@ -32,7 +32,11 @@
     </h3>
 
     <div class="card-info">
-      <span class="genre">Приключение/Фантастика</span>
+      <span class="genre">
+        <% object.genres.each do |genre| %>
+          <%= p genre.name %>
+        <% end %>
+      </span>
       <span class="year">
         <%= object.year %>
       </span>
