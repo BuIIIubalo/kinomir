@@ -37,5 +37,6 @@
      * Spacing
      */
 
+    --py: 30px; /* padding-up & padding-down */
     --px: 120px; /* padding-left & padding-right */
 }

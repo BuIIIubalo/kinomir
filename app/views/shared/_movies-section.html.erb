@@ -3,9 +3,9 @@
   <%#= render partial: 'shared/filter-section' %>
 
   <!-- Section name -->
-  <h2 class="section-heading">
+  <%= link_to '/', class: "section-heading" do%>
     <%= section_name %>
-  </h2>
+  <% end %>
 
   <!-- Movies -->
   <div class="movies-grid">

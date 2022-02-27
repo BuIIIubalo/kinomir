@@ -15,12 +15,16 @@
 
       <!-- YEAR -->
       <i class="fa-solid fa-calendar"></i>
-      <p>2014</p>
+      <p>
+        <%= @movie.year %>
+      </p>
 
       <!-- MOVIE LENGTH -->
       <div class="time">
         <i class="fa-solid fa-clock"></i>
-        <p>169</p>
+        <p>
+          <%= @movie.film_length %>
+        </p>
         <p>минут</p>
       </div>
 
@@ -41,7 +45,13 @@
   -->
 
   <div class="iframe-container">
-    <iframe src=<%= @movie.iframe_url %> frameborder="0" style="width: 100%; height: 100%"></iframe>
+    <iframe src=<%= @movie.iframe_url %> frameborder="0" style="width: 100%; height: 100%" allowfullscreen="true"></iframe>
   </div>
+
+  <!--
+    - Movie Trailer
+  -->
+
+  <%= link_to 'Trailer', @movie.trailer_url %>
 
 </section>
