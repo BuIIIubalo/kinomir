@@ -1,21 +1,25 @@
 <!-- Banner Section -->
-<%= render partial: 'shared/banner-section' %>
+<%= render partial: 'banner-section' %>
 
 <!-- Movies section -->
-<%= render partial: 'shared/movies-section', locals: { :object       => @movies,
-                                                       :section_name => "Фильмы" } %>
+<%= render partial: 'movies-section', locals: { :object       => @movies,
+                                                :section_name => "Фильмы",
+                                                :category_url => '/category-movies'} %>
 
 <!-- Series Section -->
-<%= render partial: 'shared/movies-section', locals: { :object       => @series,
-                                                       :section_name => "Сериалы" } %>
+<%= render partial: 'movies-section', locals: { :object       => @series,
+                                                :section_name => "Сериалы",
+                                                :category_url => '/category-series'} %>
 
 <!-- Cartoon Section -->
-<%= render partial: 'shared/movies-section', locals: { :object       => @cartoons,
-                                                       :section_name => "Мультфильмы" } %>
+<%= render partial: 'movies-section', locals: { :object       => @cartoons,
+                                                :section_name => "Мультфильмы",
+                                                :category_url => '/category-cartoons'} %>
 
 <!-- Recommendations Section -->
-<%= render partial: 'shared/movies-section', locals: { :object       => @advise,
-                                                       :section_name => "Рекомендации" } %>
+<%= render partial: 'movies-section', locals: { :object       => @advise,
+                                                :section_name => "Рекомендации",
+                                                :category_url => '/category-recommendations'} %>
 
 <!-- Category Section -->
-<%= render partial: 'shared/category-section' %>
+<%= render partial: 'category-section' %>

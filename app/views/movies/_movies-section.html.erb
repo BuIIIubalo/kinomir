@@ -3,14 +3,14 @@
   <%#= render partial: 'shared/filter-section' %>
 
   <!-- Section name -->
-  <%= link_to '/', class: "section-heading" do%>
+  <%= link_to category_url, class: "section-heading" do%>
     <%= section_name %>
   <% end %>
 
   <!-- Movies -->
   <div class="movies-grid">
     <% object.each do |movie| %>
-      <%= render partial: 'shared/movie-card', locals: { object: movie } %>
+      <%= render partial: 'movie-card', locals: { object: movie } %>
     <% end %>
   </div>
 
