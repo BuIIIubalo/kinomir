@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id]);
+    @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7)
   end
 
   # Categories

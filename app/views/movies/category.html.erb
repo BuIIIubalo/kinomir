@@ -1,7 +1,7 @@
 <div class="movies">
   <div class="movies-grid">
     <% @movies.each do |movie| %>
-      <%= render partial: 'movie-card', locals: { object: movie } %>
+      <%= render partial: 'movies/partial/movie-card', locals: { object: movie } %>
     <% end %>
   </div>
 </div>

@@ -2,41 +2,46 @@
 # yarn lockfile v1
 
 
-"dom7@^4.0.2":
-  "integrity" "sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw=="
-  "resolved" "https://registry.npmjs.org/dom7/-/dom7-4.0.4.tgz"
-  "version" "4.0.4"
+"@glidejs/glide@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.5.2.tgz#7012c5920ecf202bbda44d8526fc979984b6dd54"
+  integrity sha512-7jGciNJ2bQ4eZLSNlSZ+VAyW63kALf420CvkEpK4lEsUfWJq9odqimci0YCiyNyMUFB+pWHwLYyNc57dijYsCg==
+
+dom7@^4.0.2:
+  version "4.0.4"
+  resolved "https://registry.npmjs.org/dom7/-/dom7-4.0.4.tgz"
+  integrity sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==
   dependencies:
-    "ssr-window" "^4.0.0"
+    ssr-window "^4.0.0"
 
-"jquery@^3.6.0", "jquery@>=1.8.3":
-  "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
-  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
-  "version" "3.6.0"
+jquery@>=1.8.3, jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
-"owl.carousel@^2.3.4":
-  "integrity" "sha512-JaDss9+feAvEW8KZppPSpllfposEzQiW+Ytt/Xm5t/3CTJ7YVmkh6RkWixoA2yXk2boIwedYxOvrrppIGzru9A=="
-  "resolved" "https://registry.npmjs.org/owl.carousel/-/owl.carousel-2.3.4.tgz"
-  "version" "2.3.4"
+owl.carousel@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.npmjs.org/owl.carousel/-/owl.carousel-2.3.4.tgz"
+  integrity sha512-JaDss9+feAvEW8KZppPSpllfposEzQiW+Ytt/Xm5t/3CTJ7YVmkh6RkWixoA2yXk2boIwedYxOvrrppIGzru9A==
   dependencies:
-    "jquery" ">=1.8.3"
+    jquery ">=1.8.3"
 
-"ssr-window@^4.0.0", "ssr-window@^4.0.2":
-  "integrity" "sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ=="
-  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
-  "version" "4.0.2"
+ssr-window@^4.0.0, ssr-window@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
+  integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
 
-"stimulus-carousel@^4.0.0":
-  "integrity" "sha512-AW0jC5xJ6IJ6HWo9dxVLmv02xvaYvLR5TAM8EKtH0lrqDqarzlOEVgnBefKsIqP1KMuIv74TtWKwwaY7ikfweQ=="
-  "resolved" "https://registry.npmjs.org/stimulus-carousel/-/stimulus-carousel-4.0.0.tgz"
-  "version" "4.0.0"
+stimulus-carousel@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/stimulus-carousel/-/stimulus-carousel-4.0.0.tgz"
+  integrity sha512-AW0jC5xJ6IJ6HWo9dxVLmv02xvaYvLR5TAM8EKtH0lrqDqarzlOEVgnBefKsIqP1KMuIv74TtWKwwaY7ikfweQ==
   dependencies:
-    "swiper" "^7.4.1"
+    swiper "^7.4.1"
 
-"swiper@^7.4.1":
-  "integrity" "sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-7.4.1.tgz"
-  "version" "7.4.1"
+swiper@^7.4.1:
+  version "7.4.1"
+  resolved "https://registry.npmjs.org/swiper/-/swiper-7.4.1.tgz"
+  integrity sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA==
   dependencies:
-    "dom7" "^4.0.2"
-    "ssr-window" "^4.0.2"
+    dom7 "^4.0.2"
+    ssr-window "^4.0.2"

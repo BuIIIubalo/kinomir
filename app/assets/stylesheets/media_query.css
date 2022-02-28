@@ -309,6 +309,14 @@
     .wrapper { margin-bottom: 20px; }
 
     /**
+     * Button
+     */
+    .buttons{ justify-content: space-between; }
+    .btn-wrapper{
+        flex-direction: column;
+    }
+
+    /**
      * MOVIE#SHOW IFRAME
      */
 

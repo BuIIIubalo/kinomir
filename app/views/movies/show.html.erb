@@ -10,7 +10,7 @@
   <!--
     - Movie Metadata
   -->
-  <div class="metadata" style="margin-bottom: 20px">
+  <div class="metadata">
     <div class="part-metadata">
 
       <!-- YEAR -->
@@ -52,6 +52,47 @@
     - Movie Trailer
   -->
 
-  <%= link_to 'Trailer', @movie.trailer_url %>
+  <div class="buttons">
+    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+      <div class="btn-wrapper">
+        <i class="fa-brands fa-youtube" style="text-align: center"></i>
+        <p style="text-align: center">Трейлер</p>
+      </div>
+    <% end %>
+    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+      <div class="btn-wrapper">
+        <i class="fa-solid fa-bookmark" style="text-align: center"></i>
+        <p style="text-align: center">Смотреть позже</p>
+      </div>
+    <% end %>
+    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+      <div class="btn-wrapper">
+        <i class="fa-solid fa-share" style="text-align: center"></i>
+        <p style="text-align: center">Поделиться</p>
+      </div>
+    <% end %>
+  </div>
+
+  <!--
+    - Movie Description
+  -->
+
+  <div class="metadata movie-information">
+    <%= tag.div @movie.rating_kp, class: 'rating'%>
+    <div class="description">
+      <%= tag.span @movie.description, class: 'description'%>
+<!--      <button class="description-btn" >Развернуть</button>-->
+    </div>
+  </div>
 
 </section>
+
+<!--
+  - Movie Recommendation
+-->
+
+<%= render partial: 'movies/partial/movies-section', locals: {
+  :object => @recommendations,
+  :section_name => "С этим фильмом смотрят",
+  :category_url => movies_path(@movie)
+} %>
