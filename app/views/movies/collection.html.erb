@@ -1,3 +1,7 @@
+
+<!-- Page count variable -->
+<% @pages_count = @pagy.pages %>
+
 <div class="movies">
 
   <!-- Filter -->
@@ -5,8 +9,13 @@
 
   <!-- Pagination -->
   <div class="pagy-nav-wrapper">
-    <%== pagy_nav(@pagy) %>
+    <%== pagy_nav(@pagy) if @pages_count > 1 %>
   </div>
+
+  <!-- If Movies os not found -->
+  <% unless @movies.any? %>
+    <h2 style="text-align: center">Ничего не найдено</h2>
+  <% end %>
 
   <div class="movies-grid">
     <% @movies.each do |movie| %>
@@ -16,7 +25,7 @@
 
   <!-- Pagination -->
   <div class="pagy-nav-wrapper">
-    <%== pagy_nav(@pagy) %>
+    <%== pagy_nav(@pagy) if @pages_count > 1  %>
   </div>
 
 </div>

@@ -13,10 +13,12 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
 
+gem 'devise'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :development do

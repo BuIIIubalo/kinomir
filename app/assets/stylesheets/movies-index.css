@@ -141,7 +141,7 @@ header nav { margin-right: 200px; }
     --ionicon-stroke-width: 30px;
 }
 
-.navbar-signin:hover span { color: var(--light-azure); }
+.navbar-signin:hover a { color: var(--light-azure); }
 
 
 

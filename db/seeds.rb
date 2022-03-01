@@ -2,8 +2,9 @@ require 'uri'
 require 'net/http'
 require 'json'
 
+require 'faker'
 
-movies = Movie.all
+movies = Movie.where(:description => nil)
 
 # movies.each do |movie|
 #   movie.year = rand(1950..2022)
@@ -16,5 +17,7 @@ movies = Movie.all
 # end
 
 movies.each do |movie|
-  movie.genres << Genre.offset(rand(Genre.count)).first
+  movie.description = Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 10)
+  movie.save
 end
+

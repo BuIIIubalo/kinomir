@@ -30,6 +30,16 @@ class MoviesController < ApplicationController
     render :collection
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to root_path and return
+    else
+      @parameter = params[:search].downcase
+      @pagy, @movies = pagy(Movie.search(@parameter), items: 35)
+      render :collection
+    end
+  end
+
   # Test
   def getCollectionWithGenre
     category = Movie.joins(:categories).where(categories: { name: params[:category] })
