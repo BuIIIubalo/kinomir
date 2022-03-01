@@ -1,11 +1,8 @@
 <section class="category" id="category">
-
-  <h2 class="section-heading">Жанры</h2>
-
   <div class="category-grid">
 
     <% @genres.each do |genre| %>
-      <div class="category-card">
+      <a href="/genres/<%= genre.name %>" class="category-card">
         <img src="https://townsquare.media/site/442/files/2016/06/action-posters-featured.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89" alt="" class="card-img">
         <div class="name">
           <%= genre.name %>
@@ -13,9 +10,8 @@
         <div class="total">
           <%= genre.movies.count %>
         </div>
-      </div>
+      </a>
     <% end %>
 
   </div>
-
 </section>

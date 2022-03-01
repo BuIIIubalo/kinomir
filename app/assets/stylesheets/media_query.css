@@ -65,7 +65,7 @@
         transform: rotate(-45deg) translateY(-14px);
     }
 
-    nav {
+    header nav {
         position: fixed;
         top: -250px;
         left: 0;
@@ -164,6 +164,13 @@
     .footer-links { grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); }
 
     /**
+    * filter bar responsive
+    */
+    .filter-bar {
+        margin-top: 120px;
+    }
+
+    /**
      * MOVIE#SHOW
      */
 
@@ -239,12 +246,25 @@
     .banner { display: none; }
 
 
-
     /**
      * MOVIE SECTION
      */
 
-    .movies { margin-top: 120px; }
+    .movies { margin-top: 30px; }
+
+    /**
+     * CATEGORY SECTION
+     */
+
+    /**
+     * heading section
+     */
+
+    .section-heading{
+        margin-top: 120px;
+    }
+
+    .category { margin-top: 60px; }
 
     /**
      * filter bar responsive
@@ -254,7 +274,7 @@
         align-items: flex-start;
     }
 
-    .filter-bar select { margin-bottom: 20px; }
+    .filter-bar select { margin-bottom: 20px;}
 
     .filter-radios { width: 100%; }
 

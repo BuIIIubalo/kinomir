@@ -20,7 +20,7 @@ header, nav { background: var(--rich-black-fogra-29); }
 .section-heading {
     font-size: var(--section-heading);
     font-weight: var(--fw-5);
-    margin-bottom: 30px;
+    margin: 30px var(--px);
 }
 
 
@@ -66,7 +66,7 @@ header, nav { background: var(--rich-black-fogra-29); }
  * navbar navigation style
  */
 
-nav { margin-right: 200px; }
+header nav { margin-right: 200px; }
 
 .navbar-nav { display: flex; }
 

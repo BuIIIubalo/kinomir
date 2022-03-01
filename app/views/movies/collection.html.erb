@@ -1,0 +1,22 @@
+<div class="movies">
+
+  <!-- Filter -->
+  <%= render partial: 'movies/partial/filter-bar' %>
+
+  <!-- Pagination -->
+  <div class="pagy-nav-wrapper">
+    <%== pagy_nav(@pagy) %>
+  </div>
+
+  <div class="movies-grid">
+    <% @movies.each do |movie| %>
+      <%= render partial: 'movies/partial/movie-card', locals: { object: movie } %>
+    <% end %>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagy-nav-wrapper">
+    <%== pagy_nav(@pagy) %>
+  </div>
+
+</div>

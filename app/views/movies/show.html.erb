@@ -1,11 +1,11 @@
-<section class="movie">
+<!--
+  - Movie Title
+-->
+<h2 class="section-heading">
+  <%= @movie.name_ru %>
+</h2>
 
-  <!--
-    - Movie Title
-  -->
-  <h2 class="section-heading">
-    <%= @movie.name_ru %>
-  </h2>
+<section class="movies">
 
   <!--
     - Movie Metadata
@@ -91,8 +91,4 @@
   - Movie Recommendation
 -->
 
-<%= render partial: 'movies/partial/movies-section', locals: {
-  :object => @recommendations,
-  :section_name => "С этим фильмом смотрят",
-  :category_url => movies_path(@movie)
-} %>
+<%= render partial: 'movies/sections/slider-section', locals: { :object => @recommendations } %>

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   resources :movies
 
-  # Categories
-  get '/category-movies', :to => 'movies#getMovies'
-  get '/category-series', :to => 'movies#getSeries'
-  get '/category-cartoons', :to => 'movies#getCartoons'
+  # Category
+  get '/categories/:category', :to => 'movies#getCollection'
 
-  get 'category-recommendations', :to => 'movies#getRecommendations'
+  # Genre
+  get '/genres/:genre', :to => 'movies#getGenre'
+
+  #Filter
+  get '/categories/:category/:genre', :to => 'movies#getCollectionWithGenre'
 
   root "movies#index"
 end

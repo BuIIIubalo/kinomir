@@ -14,13 +14,13 @@
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
 # Pagy::DEFAULT[:page]   = 1                                  # default
-#Pagy::DEFAULT[:items]  = 7                                # default
+# Pagy::DEFAULT[:items]  = 7                                # default
 # Pagy::DEFAULT[:outset] = 0                                  # default
 
 
 # Other Variables
 # See https://ddnexus.github.io/pagy/api/pagy#other-variables
-Pagy::DEFAULT[:size]       = [0,0,0,0]                       # default
+Pagy::DEFAULT[:size]       = [0,2,2,0]                       # default
 # Pagy::DEFAULT[:page_param] = :page                           # default
 # The :params can be also set as a lambda e.g ->(params){ params.exclude('useless').merge!('custom' => 'useful') }
 # Pagy::DEFAULT[:params]     = {}                              # default
@@ -122,7 +122,7 @@ Pagy::DEFAULT[:cycle]      = true                            # example
 
 # Bootstrap extra: Add nav, nav_js and combo_nav_js helpers and templates for Bootstrap pagination
 # See https://ddnexus.github.io/pagy/extras/bootstrap
-require 'pagy/extras/bootstrap'
+# require 'pagy/extras/bootstrap'
 
 # Bulma extra: Add nav, nav_js and combo_nav_js helpers and templates for Bulma pagination
 # See https://ddnexus.github.io/pagy/extras/bulma
