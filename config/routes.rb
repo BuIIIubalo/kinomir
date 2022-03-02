@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :movies
 
   # Category
-  get '/categories/:category', :to => 'movies#getCollection'
+  get '/categories/:category', :to => 'movies#getCategory'
 
   # Genre
   get '/genres/:genre', :to => 'movies#getGenre'

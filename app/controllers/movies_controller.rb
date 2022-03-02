@@ -9,6 +9,9 @@ class MoviesController < ApplicationController
     @series = Category.find_by_name('series').movies.limit(7)
     @cartoons = Category.find_by_name('cartoon').movies.limit(7)
 
+    # News
+    @news = New.all
+
     # Movie Genres
     @genres = Genre.all
   end
@@ -20,7 +23,7 @@ class MoviesController < ApplicationController
 
   # Filtered movies
 
-  def getCollection
+  def getCategory
     @pagy, @movies = pagy(Category.find_by_name(params[:category]).movies, items: 35)
     render :collection
   end
