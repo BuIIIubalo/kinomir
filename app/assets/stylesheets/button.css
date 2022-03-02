@@ -1,0 +1,16 @@
+/*-------------------------------------*\
+  * BUTTON
+\*-------------------------------------*/
+.buttons{ display: flex; gap: 20px; }
+.btn{
+    border: none;
+    padding: 10px 0;
+    font-weight: bold;
+    display: inline-block;
+}
+.btn-wrapper { display: flex; gap: 5px;}
+.btn:hover { color: var(--white) }
+
+.btn-gray{
+    color: var(--gray);
+}

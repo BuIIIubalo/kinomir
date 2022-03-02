@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
     @cartoons = Category.find_by_name('cartoon').movies.limit(7)
 
     # News
-    @news = New.all
+    @news = New.limit(5)
 
     # Movie Genres
     @genres = Genre.all

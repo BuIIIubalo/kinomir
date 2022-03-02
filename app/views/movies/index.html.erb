@@ -1,22 +1,40 @@
-<!-- Banner Section -->
+<!--
+- Banner Section
+-->
 <%= render partial: 'movies/sections/banner-section' %>
 
-<!-- Movies section -->
+<!--
+- Movies section
+-->
 <a href="/categories/movie" class="section-heading">Фильмы</a>
 <%= render partial: 'movies/sections/slider-section', locals: { object: @movies } %>
 
-<!-- Series Section -->
+<!--
+- Series Section
+-->
 <a href="/categories/series" class="section-heading">Сериалы</a>
 <%= render partial: 'movies/sections/slider-section', locals: { object: @series }  %>
 
-<!-- Cartoon Section -->
+<!--
+  - NEWS
+-->
+<p class="section-heading">Новости</p>
+<%= render partial: 'movies/sections/news-section' %>
+
+<!--
+- Cartoon Section
+-->
 <a href="/categories/cartoon" class="section-heading">Мультфильмы</a>
 <%= render partial: 'movies/sections/slider-section', locals: { object: @cartoons }  %>
 
-<!-- Recommendations Section -->
+<!--
+- Recommendations Section
+-->
 <p class="section-heading">Рекомендации</p>
 <%= render partial: 'movies/sections/slider-section', locals: { object: @advise }  %>
 
-<!-- Genre Section -->
+<!--
+- Genre Section
+-->
 <p class="section-heading">Жанры</p>
 <%= render partial: 'movies/sections/genres-section' %>

@@ -19,21 +19,21 @@
 @import "movies-show.css";
 
 /*-------------------------------------*\
+  * NEWS SECTION
+\*-------------------------------------*/
+@import "news-section.css";
+
+/*-------------------------------------*\
+  * PAGINATION
+\*-------------------------------------*/
+@import "pagination.css";
+
+/*-------------------------------------*\
   * BUTTON
 \*-------------------------------------*/
-.buttons{ display: flex; gap: 20px; }
-.btn{
-    border: none;
-    padding: 10px 0;
-    font-weight: bold;
-    display: inline-block;
-}
-.btn-wrapper { display: flex; gap: 5px;}
-.btn:hover { color: var(--white) }
+@import "button.css";
 
-.btn-gray{
-    color: var(--gray);
-}
+
 
 
 

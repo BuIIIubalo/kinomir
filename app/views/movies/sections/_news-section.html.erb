@@ -2,7 +2,9 @@
 
   <!-- Adds -->
   <div class="new-grid">
-
+    <% @news.each do |new| %>
+      <%= render partial: 'movies/partial/new-card', locals: { object: new } %>
+    <% end %>
   </div>
 
 </section>

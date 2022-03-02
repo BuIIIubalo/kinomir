@@ -3,9 +3,87 @@
 \*-------------------------------------*/
 
 .news{
-
+    margin-bottom: 60px;
 }
 
 .new-grid{
+    display: grid;
+    gap: 20px;
+}
+
+.new-card:nth-child(1){
+    grid-column: -3 / -1;
+}
+
+/*-------------------------------------*\
+  #NEW CARD
+\*-------------------------------------*/
+
+/*
+* Card
+*/
+
+.new-card{
 
 }
+
+/*
+* First Element
+*/
+
+.new-card:nth-child(1) .card-metadata{
+    flex-direction: column;
+}
+
+.new-card:nth-child(1) .card-metadata img{
+    width: 650px;
+    height: 250px;
+}
+.new-card:nth-child(1) .card-metadata a{
+    padding: 20px 20px;
+}
+
+/*
+* Line
+*/
+
+.new-card hr{
+    margin-top: 10px;
+    border: 1px solid #8d8d8d;
+}
+
+/*
+* Card inside elements
+*/
+
+.card-metadata{
+    display: flex;
+    align-items: center;
+}
+.card-metadata a{
+    text-align: center;
+    max-height: 100px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+.card-metadata img{
+    border-radius: 10px;
+    height: 100px;
+    width: 200px;
+}
+
+/*-------------------------------------*\
+  #CARD MEDIA
+\*-------------------------------------*/
+
+@media screen and (max-width: 1024px) {
+    .new-grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .new-card:nth-child(1) .card-metadata img{
+        width: 100%;
+    }
+}
+
