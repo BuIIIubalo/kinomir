@@ -72,4 +72,6 @@ Rails.application.configure do
   #
 
   config.hosts << ENV['NGROK_HOST'] if ENV['NGROK_HOST'].present?
+  config.hosts << "35e4-77-38-232-252.ngrok.io"
+
 end

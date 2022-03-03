@@ -8,10 +8,12 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
+#gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
+
+gem 'rest-client', '~> 2.1'
 
 gem 'devise'
 gem 'pagy', '~> 5.10', '>= 5.10.1'

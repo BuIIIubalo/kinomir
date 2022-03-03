@@ -9,29 +9,40 @@
 @import "reset.css";
 
 /*-------------------------------------*\
-  * MOVIES#INDEX
+  * MOVIES INDEX
 \*-------------------------------------*/
-@import "movies-index.css";
+@import "movie/movies-index.css";
 
 /*-------------------------------------*\
-  * MOVIES#SHOW
+  * MOVIES SHOW
 \*-------------------------------------*/
-@import "movies-show.css";
+@import "movie/movies-show.css";
 
 /*-------------------------------------*\
   * NEWS SECTION
 \*-------------------------------------*/
-@import "news-section.css";
+@import "movie/news-section.css";
 
 /*-------------------------------------*\
   * PAGINATION
 \*-------------------------------------*/
-@import "pagination.css";
+@import "movie/pagination.css";
+
+/*-------------------------------------*\
+  * PRELOADER
+\*-------------------------------------*/
+@import "movie/preloader.css";
 
 /*-------------------------------------*\
   * BUTTON
 \*-------------------------------------*/
-@import "button.css";
+@import "movie/button.css";
+
+
+/*-------------------------------------*\
+  * DEVICE
+\*-------------------------------------*/
+@import "devise/form.css";
 
 
 

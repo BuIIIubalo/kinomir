@@ -1,0 +1,55 @@
+
+/*-------------------------------------*\
+  # MOVIE METADATA
+\*-------------------------------------*/
+.metadata{
+    margin: 20px 0;
+}
+
+.part-metadata{
+    padding-bottom: 5px;
+    display: flex;
+    gap:10px;
+}
+.time{
+    display: flex;
+    gap: 5px;
+}
+
+.metadata i{
+    color: var(--azure);
+}
+
+/*-------------------------------------*\
+  # MOVIE INFORMATION
+\*-------------------------------------*/
+
+.movie-information{
+    display: flex;
+    gap: 20px;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 72px;
+}
+
+.description{
+    overflow: hidden;
+    max-height: 100px;
+}
+
+
+
+/*-------------------------------------*\
+  # MOVIE IFRAME
+\*-------------------------------------*/
+
+.iframe-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    height: 550px;
+}

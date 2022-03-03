@@ -1,23 +1,18 @@
-require 'uri'
-require 'net/http'
+require 'rest-client'
 require 'json'
 
-require 'faker'
-
-movies = Movie.where(:description => nil)
-
-# movies.each do |movie|
-#   movie.year = rand(1950..2022)
-#   movie.film_length = rand(70..220)
-#   movie.rating_kp = rand(2..10)
-#   movie.rating_imdb = rand(2..10)
-#   movie.box_office_world = rand(1000000..1000000000)
-#
-#   movie.save
-# end
+movies = Movie.all
 
 movies.each do |movie|
-  movie.description = Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 10)
-  movie.save
-end
+  res = RestClient::Request.execute(method: :get, url: "https://kinopoiskapiunofficial.tech/api/v2.2/films/#{movie.kp_id}",
+                                                          headers: {'X-API-KEY' => '65c24b28-760a-4ab2-98bc-5ddc8eafe68d'})
+  res = JSON.parse(res)
 
+  res['genres'].each do |genre|
+    movie.genres << Genre.find_by_name(genre['genre']) if Genre.exists?(name: genre['genre'])
+  end
+
+  #movie.update(:trailer_url => res['items'][0]['url'])
+
+  puts movie.id if movie.id % 100 == 0
+end

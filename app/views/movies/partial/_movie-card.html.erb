@@ -33,7 +33,7 @@
 
     <div class="card-info">
       <span class="genre">
-        <% object.genres.each do |genre| %>
+        <% object.genres.order('name ASC').limit(2).each do |genre| %>
           <%= p genre.name %>
         <% end %>
       </span>

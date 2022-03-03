@@ -4,29 +4,28 @@ class MoviesController < ApplicationController
     # Recommendations
     @advise = Movie.where(recomended: true)
 
-    # Movie Categories (Sliders in future)
-    @movies = Category.find_by_name('movie').movies.limit(7)
-    @series = Category.find_by_name('series').movies.limit(7)
-    @cartoons = Category.find_by_name('cartoon').movies.limit(7)
+    # Movie Genres (Sliders in future)
+    @comedies = Genre.find_by_name('комедия').movies.limit(7)
+    @actions = Genre.find_by_name('боевик').movies.limit(7)
+    @fantastics = Genre.find_by_name('фантастика').movies.limit(7)
+    @cartoons = Genre.find_by_name('мультфильм').movies.limit(7)
 
     # News
     @news = New.limit(5)
 
     # Movie Genres
-    @genres = Genre.all
+    @genres = Genre.left_joins(:movies)
+                   .group(:id)
+                   .order('COUNT(movies.id) DESC')
+                   .limit(8)
   end
 
   def show
-    @movie = Movie.find(params[:id]);
+    @movie = Movie.find(params[:id])
     @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7)
   end
 
   # Filtered movies
-
-  def getCategory
-    @pagy, @movies = pagy(Category.find_by_name(params[:category]).movies, items: 35)
-    render :collection
-  end
 
   def getGenre
     @pagy, @movies = pagy(Genre.find_by_name(params[:genre]).movies, items: 35)
@@ -41,13 +40,6 @@ class MoviesController < ApplicationController
       @pagy, @movies = pagy(Movie.search(@parameter), items: 35)
       render :collection
     end
-  end
-
-  # Test
-  def getCollectionWithGenre
-    category = Movie.joins(:categories).where(categories: { name: params[:category] })
-    @pagy, @movies = pagy( category.joins(:genres).where(genres: { name: params[:genre] }), items: 35)
-    render :collection
   end
 
   private

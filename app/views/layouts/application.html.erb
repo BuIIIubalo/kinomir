@@ -14,12 +14,20 @@
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/dd1a51d910.js" crossorigin="anonymous"></script>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "media_query", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application"%>
+    <%= stylesheet_link_tag "media_query"%>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+
+    <div class="preloader">
+      <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
+
     <div class="container">
 
       <!-- Header -->
@@ -32,5 +40,8 @@
       <%= render partial: 'shared/footer-section' %>
 
     </div>
+    <script>
+
+    </script>
   </body>
 </html>
