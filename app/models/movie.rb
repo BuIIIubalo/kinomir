@@ -1,12 +1,13 @@
 class Movie < ApplicationRecord
-  has_many :categoryships
-  has_many :categories, through: :categoryships
 
-  has_many :genreships
+  include PgSearch::Model
+  pg_search_scope :global_search, against: [:name_ru, :name_en, :description]
+
+  has_many :genreships, dependent: :destroy
   has_many :genres, through: :genreships
 
-  def self.search(search)
-    where("lower(name_ru) LIKE :search OR lower(name_en) LIKE :search OR lower(description) LIKE :search", search: "%#{search.downcase}%")
+  def self.in_genres genre
+    Movie.joins(:genres).where("genres.name" => genre)
   end
 
 end

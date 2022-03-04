@@ -10,21 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_02_125536) do
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categoryships", force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.integer "movie_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_categoryships_on_category_id"
-    t.index ["movie_id"], name: "index_categoryships_on_movie_id"
-  end
+ActiveRecord::Schema[7.0].define(version: 2022_03_03_141041) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -33,8 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_02_125536) do
   end
 
   create_table "genreships", force: :cascade do |t|
-    t.integer "genre_id", null: false
-    t.integer "movie_id", null: false
+    t.bigint "genre_id", null: false
+    t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_genreships_on_genre_id"
@@ -67,6 +55,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_02_125536) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
@@ -80,8 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_02_125536) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categoryships", "categories"
-  add_foreign_key "categoryships", "movies"
   add_foreign_key "genreships", "genres"
   add_foreign_key "genreships", "movies"
 end

@@ -5,10 +5,10 @@ class MoviesController < ApplicationController
     @advise = Movie.where(recomended: true)
 
     # Movie Genres (Sliders in future)
-    @comedies = Genre.find_by_name('комедия').movies.limit(7)
-    @actions = Genre.find_by_name('боевик').movies.limit(7)
-    @fantastics = Genre.find_by_name('фантастика').movies.limit(7)
-    @cartoons = Genre.find_by_name('мультфильм').movies.limit(7)
+    @comedies = Movie.in_genres('комедия').limit(7)
+    @actions = Movie.in_genres('боевик').limit(7)
+    @fantastics = Movie.in_genres('фантастика').limit(7)
+    @cartoons = Movie.in_genres('мультфильм').limit(7)
 
     # News
     @news = New.limit(5)
@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
   # Filtered movies
 
   def getGenre
-    @pagy, @movies = pagy(Genre.find_by_name(params[:genre]).movies, items: 35)
+    @pagy, @movies = pagy(Movie.in_genres(params[:genre]), items: 35)
     render :collection
   end
 
@@ -36,8 +36,7 @@ class MoviesController < ApplicationController
     if params[:search].blank?
       redirect_to root_path and return
     else
-      @parameter = params[:search].downcase
-      @pagy, @movies = pagy(Movie.search(@parameter), items: 35)
+      @pagy, @movies = pagy(Movie.global_search(params[:search]), items: 35)
       render :collection
     end
   end
@@ -47,5 +46,4 @@ class MoviesController < ApplicationController
   def set_movies
     @movies = Movie.all
   end
-
 end
