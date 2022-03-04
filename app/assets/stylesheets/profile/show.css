@@ -1,0 +1,46 @@
+/*-------------------------------------*\
+  * PROFILE
+\*-------------------------------------*/
+.profile{
+    min-height: 100vh;
+}
+
+.profile-grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* About user */
+.user-about{
+
+}
+.user-image{
+    width: 250px;
+    height: 250px;
+}
+.user-name{
+    padding: 10px 0;
+}
+
+/* About actions */
+.user-actions{
+
+}
+
+/*-------------------------------------*\
+  * PROFILE MEDIA
+\*-------------------------------------*/
+@media screen and (max-width: 768px) {
+    .profile{
+        margin-top: 120px;
+    }
+    .profile-grid{
+        grid-template-columns: 1fr;
+    }
+    .user-about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

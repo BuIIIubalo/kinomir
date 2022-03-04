@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   # Search by name
   get '/search', :to => 'movies#search'
 
+  # User profile
+  get '/profile', :to => 'profiles#show'
+
   root "movies#index"
 end

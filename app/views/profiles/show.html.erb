@@ -1,0 +1,25 @@
+<div class="profile">
+  <div class="profile-grid">
+    <div class="user-about">
+      <img src="https://i.pinimg.com/736x/b6/c2/33/b6c233d89f2067b050e384824f3f69bd.jpg" alt="poster", class="user-image">
+      <h2 class="user-name">
+        <%= @user.name_or_email %>
+      </h2>
+    </div>
+    <div class="user-actions">
+
+      <!--
+      - Movies that booked user
+      -->
+      <p class="section-heading">Посмотрю позже</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+
+      <!--
+      - Movies that liked user
+      -->
+      <p class="section-heading">Мне понравилось</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+
+    </div>
+  </div>
+</div>

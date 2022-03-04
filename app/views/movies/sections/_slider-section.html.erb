@@ -2,8 +2,12 @@
 
   <!-- Movies -->
   <div class="movies-grid">
-    <% object.each do |movie| %>
-      <%= render partial: 'movies/partial/movie-card', locals: { object: movie }%>
+    <% unless object.nil? %>
+      <% object.each do |movie|%>
+        <%= render partial: 'movies/partial/movie-card', locals: { object: movie }%>
+      <% end %>
+    <% else %>
+      <h3>Пусто</h3>
     <% end %>
   </div>
 

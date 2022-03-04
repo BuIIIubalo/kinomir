@@ -1,19 +1,19 @@
 class MoviesController < ApplicationController
 
   def index
-    # Recommendations
+    # RECOMMENDATIONS
     @advise = Movie.where(recomended: true)
 
-    # Movie Genres (Sliders in future)
+    # MOVIES SECTIONS
     @comedies = Movie.in_genres('комедия').limit(7)
     @actions = Movie.in_genres('боевик').limit(7)
     @fantastics = Movie.in_genres('фантастика').limit(7)
     @cartoons = Movie.in_genres('мультфильм').limit(7)
 
-    # News
+    # NEWS SECTION
     @news = New.limit(5)
 
-    # Movie Genres
+    # GENRES SECTION
     @genres = Genre.left_joins(:movies)
                    .group(:id)
                    .order('COUNT(movies.id) DESC')
