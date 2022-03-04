@@ -14,3 +14,7 @@
 .btn-gray{
     color: var(--gray);
 }
+
+.btn-red{
+    color: #af2828;
+}

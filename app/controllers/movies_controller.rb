@@ -5,10 +5,10 @@ class MoviesController < ApplicationController
     @advise = Movie.where(recomended: true)
 
     # MOVIES SECTIONS
-    @comedies = Movie.in_genres('комедия').limit(7)
-    @actions = Movie.in_genres('боевик').limit(7)
-    @fantastics = Movie.in_genres('фантастика').limit(7)
-    @cartoons = Movie.in_genres('мультфильм').limit(7)
+    @comedies = Movie.in_genres('комедия').limit(6)
+    @actions = Movie.in_genres('боевик').limit(6)
+    @fantastics = Movie.in_genres('фантастика').limit(6)
+    @cartoons = Movie.in_genres('мультфильм').limit(6)
 
     # NEWS SECTION
     @news = New.all.limit(5)

@@ -22,10 +22,13 @@
     <nav class="">
       <ul class="navbar-nav">
 
-        <li> <a href="/" class="navbar-link">Главная</a> </li>
+        <li> <a href="/" class="navbar-link">Жанры</a> </li>
+        <li> <a href="/" class="navbar-link">Что нового</a> </li>
         <li> <a href="/" class="navbar-link">Фильмы</a> </li>
-        <li> <a href="/" class="navbar-link">Сериалы</a> </li>
         <li> <a href="/" class="navbar-link">Мультфильмы</a> </li>
+        <li>
+          <%= link_to 'Выход', destroy_user_session_path, class: 'navbar-link btn-red' %>
+        </li>
 
       </ul>
     </nav>
@@ -57,22 +60,19 @@
       <% if user_signed_in? %>
 
         <!-- User log in -->
-        <div href="" class="navbar-signin dropdown">
+        <%= link_to profile_path(current_user), class: 'navbar-signin' do %>
           <span><%= current_user.name_or_email %></span>
           <i class="fas fa-user-circle"></i>
-          <div class="dropdown-content">
-            <%= link_to 'Профиль', profile_path(current_user) %>
-            <a href="/users/sign_out">Выйти</a>
-          </div>
-        </div>
+        <% end %>
+
 
       <% else %>
 
         <!-- User is not log in -->
-        <a href=<%= new_user_session_path %> class="navbar-signin">
+        <%= link_to new_user_session_path, class: 'navbar-signin' do %>
           <span>Войти</span>
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        </a>
+        <% end %>
 
       <% end %>
 
