@@ -4,4 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Decorator
+
+  def name_or_email
+    return name if name.present?
+    return email.split('@')[0]
+  end
+
 end
