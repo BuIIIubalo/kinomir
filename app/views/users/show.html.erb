@@ -1,0 +1,50 @@
+<div class="profile">
+  <div class="profile-grid">
+    <div class="user-about">
+
+      <!--
+      - User Image
+      -->
+      <% unless @user.avatar.blank? %>
+        <%= image_tag @user.avatar, class: 'user-image' %>
+      <% else %>
+        <img src="https://i.pinimg.com/736x/b6/c2/33/b6c233d89f2067b050e384824f3f69bd.jpg" alt="poster", class="user-image">
+      <% end %>
+
+      <!--
+      - User name
+      -->
+      <h2 class="user-name">
+        <%= @user.name_or_email %>
+        (<%= @user.role %>)
+
+        <% if on_my_page %>
+          <%= link_to '', edit_user_path(current_user),class: 'fa-solid fa-pen-to-square' %>
+        <% end %>
+      </h2>
+    </div>
+    <div class="user-actions">
+
+      <!--
+      - Movies that booked user
+      -->
+      <p class="section-heading">Посмотрю позже</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+
+      <!--
+      - Movies that liked user
+      -->
+      <p class="section-heading">Мне понравилось</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: @liked_movies }  %>
+
+    </div>
+  </div>
+
+  <!--
+  - User destroy btn
+  -->
+  <% if on_my_page %>
+    <%= link_to 'Выход', destroy_user_session_path, class: 'btn-red', style: "text-align: center; padding: 20px 0" %>
+  <% end %>
+
+</div>

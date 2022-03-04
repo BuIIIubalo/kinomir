@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   # User registration
   devise_for :users
 
-  # Movies
-  resources :movies
+  # User users
+  resources :users, only: %i[show edit update]
 
-  # User profile
-  resources :profiles, only: %i[show]
+  post '/users/:id', to: 'users#update'
+
+  # Movies
+  resources :movies, only: %i[index show] do
+    resources :likes
+  end
+
 
   # Genre
   get '/genres/:genre', :to => 'movies#getGenre'

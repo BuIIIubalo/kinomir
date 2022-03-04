@@ -53,25 +53,36 @@
   -->
 
   <div class="buttons">
-    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
-      <div class="btn-wrapper">
-        <i class="fa-brands fa-youtube" style="text-align: center"></i>
-        <p style="text-align: center">Трейлер</p>
-      </div>
+
+      <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+        <div class="btn-wrapper">
+          <i class="fa-brands fa-youtube" style="text-align: center"></i>
+          <p style="text-align: center">Трейлер</p>
+        </div>
+      <% end %>
+      <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+        <div class="btn-wrapper">
+          <i class="fa-solid fa-bookmark" style="text-align: center"></i>
+          <p style="text-align: center">Смотреть позже</p>
+        </div>
+      <% end %>
+      <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+        <div class="btn-wrapper">
+          <i class="fa-solid fa-share" style="text-align: center"></i>
+          <p style="text-align: center">Поделиться</p>
+        </div>
+      <% end %>
+
+    <% pre_like = @movie.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', movie_like_path(@movie, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', movie_likes_path(@movie), method: :post %>
     <% end %>
-    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
-      <div class="btn-wrapper">
-        <i class="fa-solid fa-bookmark" style="text-align: center"></i>
-        <p style="text-align: center">Смотреть позже</p>
-      </div>
-    <% end %>
-    <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
-      <div class="btn-wrapper">
-        <i class="fa-solid fa-share" style="text-align: center"></i>
-        <p style="text-align: center">Поделиться</p>
-      </div>
-    <% end %>
+
   </div>
+
+  <p><%= @movie.likes.count %> <%= (@movie.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
   <!--
     - Movie Description

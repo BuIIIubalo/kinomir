@@ -1,0 +1,50 @@
+<%= form_with model: @user, html: {class: 'profile'} do |f| %>
+  <div class="profile-grid">
+    <div class="user-about">
+
+      <!--
+      - User Image
+      -->
+      <% unless @user.avatar.blank? %>
+        <%= image_tag @user.avatar, class: 'user-image' %>
+      <% else %>
+        <img src="https://i.pinimg.com/736x/b6/c2/33/b6c233d89f2067b050e384824f3f69bd.jpg" alt="poster", class="user-image">
+      <% end %>
+
+      <!--
+      - Change avatar field
+      -->
+      <%= f.file_field :avatar %>
+
+      <!--
+      - User name
+      -->
+      <h2 class="user-name">
+        <%= f.text_field :name, style: "color: white" %>
+      </h2>
+
+    </div>
+    <div class="user-actions">
+
+      <!--
+      - Movies that booked user
+      -->
+      <p class="section-heading">Посмотрю позже</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+
+      <!--
+      - Movies that liked user
+      -->
+      <p class="section-heading">Мне понравилось</p>
+      <%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+
+    </div>
+  </div>
+
+  <!--
+  - Submit changes
+  -->
+
+  <%= f.submit 'Сохранить', class: 'btn-red', style: "width: 100%; text-align: center; padding: 20px 0"%>
+
+<% end %>
