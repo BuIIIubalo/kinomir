@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+
+  # User registration
   devise_for :users
+
+  # Movies
   resources :movies
+
+  # User profile
+  resources :profiles, only: %i[show]
 
   # Genre
   get '/genres/:genre', :to => 'movies#getGenre'
@@ -8,8 +15,6 @@ Rails.application.routes.draw do
   # Search by name
   get '/search', :to => 'movies#search'
 
-  # User profile
-  get '/profile', :to => 'profiles#show'
-
+  # Root path
   root "movies#index"
 end

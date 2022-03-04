@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     @cartoons = Movie.in_genres('мультфильм').limit(7)
 
     # NEWS SECTION
-    @news = New.limit(5)
+    @news = New.all.limit(5)
 
     # GENRES SECTION
     @genres = Genre.left_joins(:movies)
@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7)
+    @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7) unless @movie.genres.blank?
   end
 
   # Filtered movies
