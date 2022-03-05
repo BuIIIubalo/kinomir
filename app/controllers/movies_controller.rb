@@ -1,5 +1,10 @@
 class MoviesController < ApplicationController
 
+  before_action :set_movie!, only: %i[show update]
+
+  before_action :authenticate_admin!, only: %i[edit]
+  before_action :authenticate_user!, only: %i[show edit]
+
   def index
     # RECOMMENDATIONS
     @advise = Movie.where(recomended: true)
@@ -20,8 +25,19 @@ class MoviesController < ApplicationController
                    .limit(8)
   end
 
-  def show
+  def edit
     @movie = Movie.find(params[:id])
+  end
+
+  def update
+    if @movie.update movie_params
+      redirect_to movie_path(@movie)
+    else
+      render :edit
+    end
+  end
+
+  def show
     @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7) unless @movie.genres.blank?
   end
 
@@ -43,7 +59,15 @@ class MoviesController < ApplicationController
 
   private
 
-  def set_movies
+  def set_movie!
+    @movie = Movie.find(params[:id])
+  end
+
+  def set_movies!
     @movies = Movie.all
+  end
+
+  def movie_params
+    params.require(:movie).permit(:name_ru, :year, :film_length, :description, :recomended)
   end
 end

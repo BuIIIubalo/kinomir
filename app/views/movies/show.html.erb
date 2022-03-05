@@ -1,8 +1,9 @@
 <!--
   - Movie Title
 -->
-<h2 class="section-heading">
-  <%= @movie.name_ru %>
+<h2 class="section-heading two-between">
+  <%= tag.p @movie.name_ru %>
+  <%= link_to '', edit_movie_path(@movie), class: 'fa-solid fa-gear' if current_user.admin?%>
 </h2>
 
 <section class="movies">
@@ -49,7 +50,7 @@
   </div>
 
   <!--
-    - Movie Trailer
+    - Movie Buttons
   -->
 
   <div class="buttons">
@@ -75,24 +76,43 @@
 
     <% pre_like = @movie.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= button_to 'Unlike', movie_like_path(@movie, pre_like), method: :delete %>
+
+      <%= button_to movie_like_path(@movie, pre_like), method: :delete, class: 'btn btn-gray' do %>
+        <div class="btn-wrapper">
+          <i class="fa-solid fa-thumbs-down" style="text-align: center"></i>
+          <p style="text-align: center">Ненравится</p>
+        </div>
+      <% end %>
+
     <% else %>
-      <%= button_to 'Like', movie_likes_path(@movie), method: :post %>
+
+      <%= button_to movie_likes_path(@movie), method: :post, class: 'btn btn-gray' do %>
+        <div class="btn-wrapper">
+          <i class="fa-solid fa-thumbs-up" style="text-align: center"></i>
+          <p style="text-align: center">Нравится</p>
+        </div>
+      <% end %>
+
     <% end %>
 
   </div>
-
-  <p><%= @movie.likes.count %> <%= (@movie.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
   <!--
     - Movie Description
   -->
 
   <div class="metadata movie-information">
-    <%= tag.div @movie.rating_kp, class: 'rating'%>
     <div class="description">
       <%= tag.span @movie.description, class: 'description'%>
 <!--      <button class="description-btn" >Развернуть</button>-->
+    </div>
+    <div class="marks">
+      <%= tag.div "Kinopoisk #{@movie.rating_kp}"%>
+      <%= tag.div "IMDB #{@movie.rating_imdb}"%>
+      <%= tag.div "CinemaW #{@movie.likes.count} likes"%>
+    </div>
+    <div class="actors">
+
     </div>
   </div>
 

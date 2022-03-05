@@ -20,20 +20,44 @@
     color: var(--azure);
 }
 
+.two-between{
+    display: flex;
+    justify-content: space-between;
+}
+
 /*-------------------------------------*\
   # MOVIE INFORMATION
 \*-------------------------------------*/
 
 .movie-information{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "description description "
+    "marks actors";
     gap: 20px;
 }
 
-.rating{
+.description{
+    grid-area: description;
+}
+.marks{
+    grid-area: marks;
+}
+.actors{
+    grid-area: actors;
+}
+
+.marks{
     display: flex;
-    justify-content: center;
-    align-content: center;
-    font-size: 72px;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.rating-item{
+    display: inline-block;
 }
 
 .description{

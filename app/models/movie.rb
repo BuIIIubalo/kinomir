@@ -12,7 +12,7 @@ class Movie < ApplicationRecord
     Movie.joins(:genres).where("genres.name" => genre)
   end
 
-  def self.liked_movie user_id
+  def self.liked_movies user_id
     Movie.joins(:likes).where("likes.user_id" => user_id)
   end
 

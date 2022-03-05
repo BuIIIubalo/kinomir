@@ -1,0 +1,72 @@
+<!--
+  - Movie Title
+-->
+<%= form_with model: @movie, html: {class: ''} do |f| %>
+<h2 class="section-heading">
+  <%= f.text_field :name_ru, class: 'input-text-white'%>
+  <div style="font-size: 14px">
+    recommended <%= f.check_box :recomended, class: 'input-text-white'%>
+  </div>
+</h2>
+
+<section class="movies">
+
+  <!--
+    - Movie Metadata
+  -->
+  <div class="metadata">
+    <div class="part-metadata">
+
+      <!-- YEAR -->
+      <i class="fa-solid fa-calendar"></i>
+      <p>
+        <%= f.text_field :year, class: 'input-text-white', style: 'width: 50px'%>
+      </p>
+
+      <!-- MOVIE LENGTH -->
+      <div class="time">
+        <i class="fa-solid fa-clock"></i>
+        <p>
+          <%= f.text_field :film_length, class: 'input-text-white', style: 'width: 50px'%>
+        </p>
+        <p>минут</p>
+      </div>
+
+    </div>
+    <div class="part-metadata">
+      <bold>Актеры:</bold>
+
+      <!-- ACTORS -->
+      <p>
+        Юрий Борисов, Стася Милославская, Афина Кондрашова
+      </p>
+
+    </div>
+  </div>
+
+  <!--
+    - Movie Iframe
+  -->
+
+  <div class="iframe-container">
+    <iframe src=<%= @movie.iframe_url %> frameborder="0" style="width: 100%; height: 100%" allowfullscreen="true"></iframe>
+  </div>
+
+  <!--
+    - Movie Description
+  -->
+
+  <div class="metadata movie-information">
+    <div class="description">
+      <%= f.text_field :description, class: 'input-text-white description input-w-100'%>
+      <!--      <button class="description-btn" >Развернуть</button>-->
+    </div>
+    <div class="actors">
+
+    </div>
+  </div>
+
+  <%= f.submit 'Сохранить', class: 'btn-red', style: "width: 100%; text-align: center; padding: 20px 0"%>
+
+</section>
+<% end %>

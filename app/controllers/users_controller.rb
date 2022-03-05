@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!
+
   before_action :set_user, only: %i[show update]
-  before_action -> { redirect_to root_path unless user_signed_in? }
+  before_action :authenticate_user!
 
   def show
 
-    # Liked movies
-    @liked_movies = Movie.liked_movie params[:id]
+    # Liked movies (last 8 items)
+    @liked_movies = Movie.liked_movies(params[:id]).limit(8).reverse
   end
 
   def edit

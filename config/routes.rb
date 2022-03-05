@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/users/:id', to: 'users#update'
 
   # Movies
-  resources :movies, only: %i[index show] do
+  resources :movies do
     resources :likes
   end
 
