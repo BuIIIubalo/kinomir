@@ -1,10 +1,11 @@
 import classesToSelector from '../../shared/classes-to-selector.js';
 import $ from '../../shared/dom.js';
-export default function A11y({
-  swiper,
-  extendParams,
-  on
-}) {
+export default function A11y(_ref) {
+  let {
+    swiper,
+    extendParams,
+    on
+  } = _ref;
   extendParams({
     a11y: {
       enabled: true,
@@ -30,7 +31,11 @@ export default function A11y({
     notification.html(message);
   }
 
-  function getRandomNumber(size = 16) {
+  function getRandomNumber(size) {
+    if (size === void 0) {
+      size = 16;
+    }
+
     const randomChar = () => Math.round(16 * Math.random()).toString(16);
 
     return 'x'.repeat(size).replace(/x/g, randomChar);
@@ -181,6 +186,15 @@ export default function A11y({
     addElControls($el, wrapperId);
   };
 
+  const handleFocus = e => {
+    const slideEl = e.target.closest(`.${swiper.params.slideClass}`);
+    if (!slideEl || !swiper.slides.includes(slideEl)) return;
+    const isActive = swiper.slides.indexOf(slideEl) === swiper.activeIndex;
+    const isVisible = swiper.params.watchSlidesProgress && swiper.visibleSlides && swiper.visibleSlides.includes(slideEl);
+    if (isActive || isVisible) return;
+    swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+  };
+
   function init() {
     const params = swiper.params.a11y;
     swiper.$el.append(liveRegion); // Container
@@ -237,7 +251,10 @@ export default function A11y({
 
     if (hasClickablePagination()) {
       swiper.pagination.$el.on('keydown', classesToSelector(swiper.params.pagination.bulletClass), onEnterOrSpaceKey);
-    }
+    } // Tab focus
+
+
+    swiper.$el.on('focus', handleFocus, true);
   }
 
   function destroy() {
@@ -264,7 +281,10 @@ export default function A11y({
 
     if (hasClickablePagination()) {
       swiper.pagination.$el.off('keydown', classesToSelector(swiper.params.pagination.bulletClass), onEnterOrSpaceKey);
-    }
+    } // Tab focus
+
+
+    swiper.$el.off('focus', handleFocus, true);
   }
 
   on('beforeInit', () => {
@@ -273,13 +293,8 @@ export default function A11y({
   on('afterInit', () => {
     if (!swiper.params.a11y.enabled) return;
     init();
-    updateNavigation();
   });
-  on('toEdge', () => {
-    if (!swiper.params.a11y.enabled) return;
-    updateNavigation();
-  });
-  on('fromEdge', () => {
+  on('fromEdge toEdge afterInit lock unlock', () => {
     if (!swiper.params.a11y.enabled) return;
     updateNavigation();
   });

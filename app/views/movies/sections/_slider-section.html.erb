@@ -1,15 +1,19 @@
 <section class="movies">
 
   <!-- Movies -->
-  <div class="movies-grid">
-    <% unless object.blank? %>
-      <% object.each do |movie|%>
-        <%= render partial: 'movies/partial/movie-card', locals: { object: movie }%>
+  <div class="swiper mySwiper", style="max-width: 100%">
+    <div class="swiper-wrapper">
+      <% unless object.blank? %>
+        <% object.each do |movie|%>
+          <%= render partial: 'movies/partial/movie-card', locals: { object: movie }%>
+        <% end %>
+      <% else %>
+        <h3>Пусто</h3>
       <% end %>
-    <% else %>
-      <h3>Пусто</h3>
-    <% end %>
+    </div>
+<!--    <div class="swiper-pagination"></div>-->
   </div>
 
 </section>
+
 
