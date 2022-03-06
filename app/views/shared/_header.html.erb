@@ -59,7 +59,11 @@
         <!-- User log in -->
         <%= link_to user_path(current_user), class: 'navbar-signin' do %>
           <span><%= current_user.name_or_email %></span>
-          <i class="fas fa-user-circle"></i>
+
+          <!-- User image -->
+
+          <%= header_avatar %>
+
         <% end %>
 
 

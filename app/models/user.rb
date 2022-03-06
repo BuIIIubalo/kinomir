@@ -17,11 +17,14 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
-  # Decorator
+  # Check avatar exist
+  def is_avatar?
+    return avatar.attached?
+  end
 
+  # If name is nil return email against name
   def name_or_email
     return name if name.present?
     return email.split('@')[0]
   end
-
 end

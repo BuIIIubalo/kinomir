@@ -109,7 +109,7 @@
     <div class="marks">
       <%= tag.div "Kinopoisk #{@movie.rating_kp}"%>
       <%= tag.div "IMDB #{@movie.rating_imdb}"%>
-      <%= tag.div "CinemaW #{@movie.likes.count} likes"%>
+      <%= tag.div "CineW #{@movie.likes.count} likes"%>
     </div>
     <div class="actors">
 
@@ -122,4 +122,5 @@
   - Movie Recommendation
 -->
 
+<h2 class="section-heading"> Рекомендации </h2>
 <%= render partial: 'movies/sections/slider-section', locals: { :object => @recommendations } %>

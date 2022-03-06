@@ -171,6 +171,14 @@
     }
 
     /**
+     * heading section
+     */
+
+    .section-heading{
+        margin-top: 120px;
+    }
+
+    /**
      * MOVIE#SHOW
      */
 
@@ -255,14 +263,6 @@
     /**
      * CATEGORY SECTION
      */
-
-    /**
-     * heading section
-     */
-
-    .section-heading{
-        margin-top: 120px;
-    }
 
     .category { margin-top: 60px; }
 

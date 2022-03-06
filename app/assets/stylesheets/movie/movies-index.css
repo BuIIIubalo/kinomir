@@ -39,6 +39,16 @@ header, nav { background: var(--rich-black-fogra-29); }
 \*-------------------------------------*/
 
 /**
+ * navbar user avatar
+ */
+.header-user-avatar{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/**
  * navbar style
  */
 
