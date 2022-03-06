@@ -8,5 +8,10 @@ import "./header"
 // Loader
 import "./loader"
 
+// Action text
+import "trix"
+import "@rails/actiontext"
+
 // Slider
 import "./slider"
+

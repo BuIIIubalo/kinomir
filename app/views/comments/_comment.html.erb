@@ -1,0 +1,10 @@
+<div class="comment-<%= comment.id %>", style="margin-bottom: 20px">
+  <div class="two-between", style="padding: 10px 0">
+    <%= link_to comment.user.name_or_email, user_path(comment.user) %>
+    <% if current_user == comment.user %>
+      <%= button_to 'Удалить', [movie, comment], method: :delete %>
+    <% end %>
+  </div>
+    <hr style="margin-bottom: 10px">
+     <%= tag.p comment.body%>
+</div>

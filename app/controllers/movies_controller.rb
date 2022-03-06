@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 
-  before_action :set_movie!, only: %i[show update]
+  before_action :set_movie, only: %i[show update]
 
   before_action :authenticate_admin!, only: %i[edit]
   before_action :authenticate_user!, only: %i[show edit]
@@ -39,6 +39,7 @@ class MoviesController < ApplicationController
 
   def show
     @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7) unless @movie.genres.blank?
+    @comments = @movie.comments.order(:created_at => :desc)
   end
 
   # Filtered movies
@@ -59,7 +60,7 @@ class MoviesController < ApplicationController
 
   private
 
-  def set_movie!
+  def set_movie
     @movie = Movie.find(params[:id])
   end
 

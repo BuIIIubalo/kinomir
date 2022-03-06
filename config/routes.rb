@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # Movies
   resources :movies do
+    resources :comments
     resources :likes
   end
 

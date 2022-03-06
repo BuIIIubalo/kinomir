@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
 
   has_many :likes, dependent: :destroy
 
+  has_many :comments, dependent: :destroy
+
   has_many :genreships, dependent: :destroy
   has_many :genres, through: :genreships, dependent: :destroy
 

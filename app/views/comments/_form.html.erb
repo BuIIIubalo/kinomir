@@ -1,0 +1,6 @@
+<%= form_with(model: [movie, movie.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.rich_text_area :body %>
+    <%= f.submit 'Отправить', class: 'input-text-white', style: "padding: 20px 0"%>
+  </div>
+<% end %>

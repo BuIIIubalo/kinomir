@@ -124,3 +124,16 @@
 
 <h2 class="section-heading"> Рекомендации </h2>
 <%= render partial: 'movies/sections/slider-section', locals: { :object => @recommendations } %>
+
+<!--
+- Movie Comments
+-->
+
+<h2 class="section-heading"> Комментарии </h2>
+
+<div class="movies">
+  <%= render partial: 'comments/form', locals: { movie: @movie } %>
+  <% @comments.each do |comment| %>
+    <%= render partial: 'comments/comment', locals: { movie: @movie, comment: comment } %>
+  <% end %>
+</div>

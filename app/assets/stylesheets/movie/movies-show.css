@@ -77,3 +77,14 @@
 
     height: 550px;
 }
+
+/*-------------------------------------*\
+  # MOVIE COMMENT FORM
+\*-------------------------------------*/
+.field{
+    color: var(--white);
+}
+
+.field button{
+    background-color: var(--white) !important;
+}
