@@ -7,7 +7,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-#gem "turbo-rails"
+gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false

@@ -1,0 +1,18 @@
+/*-------------------------------------*\
+  * COMMENT
+\*-------------------------------------*/
+.comment{
+    width: 100%;
+}
+
+.comment-user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-user img{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}

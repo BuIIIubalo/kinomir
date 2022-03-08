@@ -52,8 +52,35 @@
 .marks{
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    font-size: 16px;
+}
+
+
+.movie-mark{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    top:10px;left: 10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    background-color: var(--rich-black-fogra-29);
+}
+.movie-mark p{
+    font-size: 12px;
+}
+.movie-mark::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: var(--azure);
+    z-index: -1;
 }
 
 .rating-item{

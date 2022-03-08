@@ -59,6 +59,9 @@
 
   <body>
 
+    <!--
+    - Preloader
+    -->
     <div class="preloader">
       <div class="preloader__row">
         <div class="preloader__item"></div>
@@ -71,8 +74,10 @@
       <!-- Header -->
       <%= render partial: 'shared/header' %>
 
+
       <!-- Main -->
       <%= yield %>
+
 
       <!-- Footer -->
       <%= render partial: 'shared/footer-section' %>

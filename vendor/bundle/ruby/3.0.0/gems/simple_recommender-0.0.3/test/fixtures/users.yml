@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+fiction_fred:
+  name: Fiction Fred
+
+fiction_fanny:
+  name: Fiction Fanny
+
+fiction_fil:
+  name: Fiction Fil
+
+programmer_paulina:
+  name: Programmer Paulina
+
+programmer_paul:
+  name: Programmer Paul
+
+programmer_paige:
+  name: Programmer Paige
