@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   # User users
   resources :users, only: %i[show edit update]
-
   post '/users/:id', to: 'users#update'
 
   # Movies
@@ -15,8 +14,14 @@ Rails.application.routes.draw do
     resources :bookmarks
   end
 
+  # Authors
+  resources :authors, only: %i[show]
+
   # News
   get '/news', to: 'news#index'
+
+  # Top-100
+  get '/top100', to: 'movies#top100'
 
   # Genre
   get '/genres/:genre', :to => 'movies#getGenre'

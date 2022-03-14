@@ -35,9 +35,10 @@
 
       <!-- ACTORS -->
       <p>
-        Юрий Борисов, Стася Милославская, Афина Кондрашова
+        <% @authors.limit(2).each do |author|%>
+          <%= author.nameRu %>,
+        <% end%>
       </p>
-
     </div>
   </div>
 
@@ -146,10 +147,12 @@
           <p>Likes</p>
       <% end %>
     </div>
-    <div class="actors">
-
-    </div>
   </div>
+
+  <!--
+    - Authors slider
+  -->
+  <%= render partial: 'movies/sections/actors-slider', locals: { object: @authors }%>
 
 </section>
 

@@ -31,12 +31,10 @@
 
 .movie-information{
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-template-areas:
-    "description description "
-    "marks actors";
-    gap: 20px;
+    "marks description";
+    gap: 50px;
 }
 
 .description{
@@ -45,9 +43,7 @@
 .marks{
     grid-area: marks;
 }
-.actors{
-    grid-area: actors;
-}
+
 
 .marks{
     display: flex;
@@ -60,8 +56,8 @@
     flex-direction: column;
     gap: 0px;
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     top:10px;left: 10px;
     border-radius: 100%;
     display: flex;
@@ -76,8 +72,8 @@
 .movie-mark::before{
     content: '';
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     background-color: var(--azure);
     z-index: -1;
@@ -92,7 +88,22 @@
     max-height: 100px;
 }
 
+/*-------------------------------------*\
+  # MOVIE AUTHORS
+\*-------------------------------------*/
 
+.author-img{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px
+}
+.author-name{
+
+}
+.author-profession{
+    color: var(--gray);
+    font-size: 12px
+}
 
 /*-------------------------------------*\
   # MOVIE IFRAME

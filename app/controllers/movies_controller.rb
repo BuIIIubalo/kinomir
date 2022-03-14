@@ -8,13 +8,13 @@ class MoviesController < ApplicationController
 
 
   def index
-    # RECOMMENDATIONS
+    # Recommendations
     @advise = Movie.where(recomended: true)
 
-    # NEWS SECTION
+    # News
     @news = New.all.limit(5)
 
-    # GENRES SECTION
+    # Genres
     @genres = Genre.left_joins(:movies)
                    .group(:id)
                    .order('COUNT(movies.id) DESC')
@@ -34,17 +34,29 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @recommendations = Genre.find(@movie.genres.first.id).movies.limit(7) unless @movie.genres.blank?
+    # Movies like this movie genre
+    @recommendations = Movie.top_by_likes(14)
+
+    # Movie authors
+    @authors = @movie.authors
+
+    # Movie comments
     @comments = @movie.comments.order(:created_at => :desc)
   end
 
-  # Filtered movies
-
+  # Get collection of movies by genre
   def getGenre
     @pagy, @movies = pagy(Movie.in_genres(params[:genre]), items: 35)
     render :collection
   end
 
+  # Get collection of top100 movies
+  def top100
+    @pagy, @movies = pagy(Movie.top_by_likes(100) , items: 35)
+    render :collection
+  end
+
+  # Searcher pgSearch
   def search
     if params[:search].blank?
       redirect_to root_path and return
@@ -67,4 +79,5 @@ class MoviesController < ApplicationController
   def movie_params
     params.require(:movie).permit(:name_ru, :year, :film_length, :description, :recomended)
   end
+  
 end

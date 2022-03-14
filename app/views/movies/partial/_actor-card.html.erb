@@ -1,0 +1,5 @@
+<%= link_to author_path(object), class: 'movie-card swiper-slide' do %>
+    <img src=<%= object.posterUrl %> alt="actor" class="author-img">
+    <p class="author-name"><%= object.nameRu %></p>
+    <p class="author-profession"><%= object.professionText %></p>
+<% end%>

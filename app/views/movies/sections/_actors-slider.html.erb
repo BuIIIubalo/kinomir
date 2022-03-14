@@ -1,0 +1,13 @@
+<!-- Actors -->
+<div class="swiper authorsSwiper", style="margin-top: 60px">
+  <div class="swiper-wrapper">
+    <% unless object.blank? %>
+      <% object.each do |actor|%>
+        <%= render partial: 'movies/partial/actor-card', locals: { object: actor }%>
+      <% end %>
+    <% else %>
+      <h3>Пусто</h3>
+    <% end %>
+  </div>
+<!--    <div class="swiper-pagination"></div>-->
+</div>

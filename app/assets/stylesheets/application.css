@@ -19,6 +19,11 @@
 @import "movie/movies-show.css";
 
 /*-------------------------------------*\
+  * AUTHOR SHOW
+\*-------------------------------------*/
+@import "author/show.css";
+
+/*-------------------------------------*\
   * NEWS SECTION
 \*-------------------------------------*/
 @import "movie/news-section.css";
