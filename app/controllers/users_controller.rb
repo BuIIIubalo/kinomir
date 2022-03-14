@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
     # Liked movies (last 8 items)
     @liked_movies = Movie.liked_movies(params[:id]).order("likes.created_at DESC").limit(8)
+    @bookmarked_movies = Movie.bookmarked_movies(params[:id]).order("bookmarks.created_at DESC")
   end
 
   def edit

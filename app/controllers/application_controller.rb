@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+
+  # Handling
+  include ErrorHandling
+
   # Pagy gem
   include Pagy::Backend
 

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staffId: 1
+  nameRu: MyString
+  nameEn: MyString
+  description: MyString
+  posterUrl: MyString
+  professionText: MyString
+
+two:
+  staffId: 1
+  nameRu: MyString
+  nameEn: MyString
+  description: MyString
+  posterUrl: MyString
+  professionText: MyString

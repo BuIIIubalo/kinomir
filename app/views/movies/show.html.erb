@@ -55,24 +55,58 @@
 
   <div class="buttons">
 
+      <!--
+        - Trailer button
+      -->
+
       <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
         <div class="btn-wrapper">
           <i class="fa-brands fa-youtube" style="text-align: center"></i>
           <p style="text-align: center">Трейлер</p>
         </div>
       <% end %>
-      <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
-        <div class="btn-wrapper">
-          <i class="fa-solid fa-bookmark" style="text-align: center"></i>
-          <p style="text-align: center">Смотреть позже</p>
-        </div>
+
+      <!--
+        - I will watch later button
+      -->
+
+      <% pre_book = @movie.bookmarks.find { |bookmark| bookmark.user_id == current_user.id} %>
+      <% if pre_book %>
+
+        <%= button_to movie_bookmark_path(@movie, pre_book), method: :delete, class: 'btn btn-gray' do %>
+          <div class="btn-wrapper">
+            <i class="fa-solid fa-bookmark" style="text-align: center"></i>
+            <p style="text-align: center">Посмотрел</p>
+          </div>
+        <% end %>
+
+      <% else %>
+
+        <%= button_to movie_bookmarks_path(@movie), method: :post, class: 'btn btn-gray' do %>
+          <div class="btn-wrapper">
+            <i class="fa-solid fa-bookmark" style="text-align: center"></i>
+            <p style="text-align: center">Смотреть позже</p>
+          </div>
+        <% end %>
+
       <% end %>
-      <%= link_to @movie.trailer_url, class: 'btn btn-gray' do %>
+
+    <!--
+      - Share button
+    -->
+
+    <%= link_to 'https://www.addtoany.com/share', class: 'btn btn-gray a2a_dd' do %>
         <div class="btn-wrapper">
-          <i class="fa-solid fa-share" style="text-align: center"></i>
+          <p class="fa-solid fa-share" style="text-align: center"></p>
           <p style="text-align: center">Поделиться</p>
         </div>
-      <% end %>
+    <% end %>
+
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+    <!--
+      - Like button
+    -->
 
     <% pre_like = @movie.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>

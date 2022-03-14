@@ -33,7 +33,7 @@
 - Movies that booked user
 -->
 <p class="section-heading">Посмотрю позже</p>
-<%= render partial: 'movies/sections/slider-section', locals: { object: nil }  %>
+<%= render partial: 'movies/sections/slider-section', locals: { object: @bookmarked_movies }  %>
 
 <!--
 - Movies that liked user

@@ -11,6 +11,10 @@
     </button>
 
 
+    <!--
+      - navbar logo
+    -->
+
     <a href="/" class="navbar-brand">
       <%= image_tag 'header/logo' %>
     </a>
@@ -22,10 +26,10 @@
     <nav class="">
       <ul class="navbar-nav">
 
-        <li> <a href="/" class="navbar-link">Жанры</a> </li>
-        <li> <a href="/" class="navbar-link">Что нового</a> </li>
-        <li> <a href="/" class="navbar-link">Фильмы</a> </li>
-        <li> <a href="/" class="navbar-link">Мультфильмы</a> </li>
+        <li> <a href="/#genres" class="navbar-link">Жанры</a> </li>
+        <li> <%= link_to 'Что нового', news_path, class: 'navbar-link' %> </li>
+        <li> <a href="/genres/фильм" class="navbar-link">Фильмы</a> </li>
+        <li> <a href="/genres/мультфильм" class="navbar-link">Мультфильмы</a> </li>
 
       </ul>
     </nav>

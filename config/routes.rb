@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   resources :movies do
     resources :comments
     resources :likes
+    resources :bookmarks
   end
 
+  # News
+  get '/news', to: 'news#index'
 
   # Genre
   get '/genres/:genre', :to => 'movies#getGenre'

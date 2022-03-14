@@ -7,40 +7,41 @@
 - Comedies section
 -->
 <a href="/genres/комедия" class="section-heading">Комедии</a>
-<%= render partial: 'movies/sections/slider-section', locals: { object: @comedies } %>
+<%= render partial: 'movies/sections/slider-section', locals: { object: Movie.in_genres('комедия', 14) } %>
 
 <!--
   - NEWS
 -->
-<p class="section-heading">Новости</p>
+
+<%= link_to 'Новости', news_path, class: 'section-heading' %>
 <%= render partial: 'movies/sections/news-section', locals: { object: @news } %>
 
 <!--
 - Action Section
 -->
 <a href="/genres/боевик" class="section-heading">Боевики</a>
-<%= render partial: 'movies/sections/slider-section', locals: { object: @actions }  %>
+<%= render partial: 'movies/sections/slider-section', locals: { object:  Movie.in_genres('боевик', 14) }  %>
 
 <!--
 - Fantastic Section
 -->
 <a href="/genres/фантастика" class="section-heading">Фантастика</a>
-<%= render partial: 'movies/sections/slider-section', locals: { object: @fantastics }  %>
+<%= render partial: 'movies/sections/slider-section', locals: { object:  Movie.in_genres('фантастика', 14) } %>
 
 <!--
 - Cartoon Section
 -->
-<a href="/genres/мультфильм" class="section-heading">Мультфильмы</a>
-<%= render partial: 'movies/sections/slider-section', locals: { object: @cartoons }  %>
+<a href="/genres/мультфильм" class="section-heading" id="cartoons">Мультфильмы</a>
+<%= render partial: 'movies/sections/slider-section', locals: { object:  Movie.in_genres('мультфильм', 14) } %>
 
 <!--
 - Recommendations Section
 -->
 <p class="section-heading">Рекомендации</p>
-<%= render partial: 'movies/sections/slider-section', locals: { object: @advise }  %>
+<%= render partial: 'movies/sections/slider-section', locals: { object: @advise } %>
 
 <!--
 - Genre Section
 -->
-<p class="section-heading">Жанры</p>
+<p class="section-heading" id="genres">Жанры</p>
 <%= render partial: 'movies/sections/genres-section' %>

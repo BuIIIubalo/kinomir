@@ -1,19 +1,15 @@
 class MoviesController < ApplicationController
 
   before_action :set_movie, only: %i[show update]
+  before_action :set_movies, only: %i[index]
 
   before_action :authenticate_admin!, only: %i[edit]
   before_action :authenticate_user!, only: %i[show edit]
 
+
   def index
     # RECOMMENDATIONS
     @advise = Movie.where(recomended: true)
-
-    # MOVIES SECTIONS
-    @comedies = Movie.in_genres('комедия').limit(14)
-    @actions = Movie.in_genres('боевик').limit(14)
-    @fantastics = Movie.in_genres('фантастика').limit(14)
-    @cartoons = Movie.in_genres('мультфильм').limit(14)
 
     # NEWS SECTION
     @news = New.all.limit(5)
@@ -64,7 +60,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
-  def set_movies!
+  def set_movies
     @movies = Movie.all
   end
 
